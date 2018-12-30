@@ -38,7 +38,7 @@ function CorrectPath(str) {
     // putting every possible combo into combos array
     const combos = [];
     for (let i = 0; i < maxCombos; i++) {
-        const combo = lpad(i.toString(4), qmarks);
+        const combo = lpad(i.toString(4), qmarks); // converts i to a base 4 number into a string with leading zeroes corresponding to amount of question marks
         combos.push(combo);
     }
 
