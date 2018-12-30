@@ -4,7 +4,7 @@ function ChessboardTraveling(str) {
     if (pattern.test(str)) {
         // some ugly stringh parsing to read the x/y values
         const foo = str.split(")(");
-        var bar = foo[0].split(" ");
+        let bar = foo[0].split(" ");
         const x = bar[0].substr(1);
         const y = bar[1];
         bar = foo[1].split(" ");
