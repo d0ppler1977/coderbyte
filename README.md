@@ -4,6 +4,8 @@ my Coderbyte Challenge submissions
 
 Hello!
 
+All of my code is ECMAScript 2019 compatible.
+
 This is simply an excerpt of my subbissions to the coderbyte challenge.
 
 The ones I've submitted here on Github is the ones I feel can be of interrest for the public, 
