@@ -30,4 +30,5 @@ function getTheOtherChar(str) {
     else if (str.indexOf("b") < 0) return "b";
     else return "c";
 }
+
 console.log(StringReduction(process.argv[2]));
