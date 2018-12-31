@@ -2,7 +2,7 @@ function SwapII(str) {
     str = invertCase(str);
     const l = str.length;
     let retval = "";
-    for (let i = 0; i < l; i ++) { // loop through the string
+    for (let i = 0; i < l; i ++) { // loop through the string 
         if (/[0-9]/.test(str[i])) { // if current char is a digit, then check it further..
             let searchString = str.substring(i);
             const posOfSpace = searchString.indexOf(" ");
