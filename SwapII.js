@@ -1,18 +1,15 @@
 function SwapII(str) { 
-    console.log("input : " + str);
     str = invertCase(str);
-    console.log("rever : " + str);
     const l = str.length;
     let retval = "";
-    for (let i = 0; i < l; i ++) {
-        if (/[0-9]/.test(str[i])) {
+    for (let i = 0; i < l; i ++) { // loop through the string
+        if (/[0-9]/.test(str[i])) { // if current char is a digit, then check it further..
             let searchString = str.substring(i);
             const posOfSpace = searchString.indexOf(" ");
-            if (posOfSpace > 0) searchString = searchString.substring(0, posOfSpace);
-            const pattern = /\d[a-zA-Z]+\d/;
+            if (posOfSpace > 0) searchString = searchString.substring(0, posOfSpace); // limit the searchstring to next space or end of string if no space is found
+            const pattern = /\d[a-zA-Z]+\d/; // this is the pattern we're looking for
             if (pattern.test(searchString)) {
                 const match = searchString.match(pattern)[0];
-                console.log("  match ---> " + match);
                 i += match.length - 1;
                 const first = match[0];
                 const last = match[match.length - 1];
@@ -27,6 +24,7 @@ function SwapII(str) {
     return retval;
 }
 
+// help function
 function invertCase(str) {
     const l = str.length;
     let retval = "";
