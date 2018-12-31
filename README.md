@@ -12,4 +12,4 @@ and they all should be understandable for a programmers mind.
 If you don't, please ask, and I will explain/comment the code as good and understandable as I can.
 
 
-/david
+/d0ppler1977
