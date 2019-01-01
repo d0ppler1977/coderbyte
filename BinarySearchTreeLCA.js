@@ -77,11 +77,10 @@ function BinarySearchTreeLCA(strArr) {
     const root =  BST.getRootNode();
     const n1 = BST.search(root, node1); // finds the first node i the tree
     const n2 = BST.search(root, node2); // the second
-
     // since we can asume that every given node exists, we simply call the function with no error handling
     const lca = BST.lowestCommonAncestor(root, n1, n2); // and finally the LCA
-    return lca.idx;
 
+    return lca.idx;
 }
 
 // help functions
@@ -92,8 +91,8 @@ function convertToArray(str) {
     return str.split(",").map(Number);
 }
 
-const input = ["[10, 5, 1, 7, 40, 50]", "1", "7"];
+//const input = ["[10, 5, 1, 7, 40, 50]", "1", "7"];
 //const input = ["[10, 5, 1, 7, 40, 50]", "5", "10"];
-//const input = ["[3, 2, 1, 12, 4, 5, 13]", "5", "13"];
+const input = ["[3, 2, 1, 12, 4, 5, 13]", "5", "13"];
 
 console.log(BinarySearchTreeLCA(input));
