@@ -14,16 +14,13 @@ function ClosestEnemyII(board) {
         }
 
     }
-    const n = enemies.length;
-    let closest = -1
-    for (let i = 0; i < n; i ++) {
-        const dist = getDistance(myPos, enemies[i], l);
-        if (closest === - 1) closest = dist;
-        if (dist < closest) closest = dist;
+
+    if (enemies.length > 0) {
+        enemies.forEach(enemy => enemy.distance = getDistance(myPos, enemy, l));
+        return enemies.reduce((min, e) => e.distance <  min ? e.distance : min, enemies[0].distance);    
+    } else {
+        return 0;
     }
-    //console.log(board);
-    if (closest === -1) return 0;
-    else return closest;
 }
 
 function getDistance(pos1, pos2, size) {
@@ -68,7 +65,7 @@ function getDistance(pos1, pos2, size) {
 
 // some test parameters:
 //const input = ["0000", "1000", "0002", "0002"];
-const input = ["01000", "00000", "00000", "00000", "00000"];
+const input = ["10000", "00000", "00000", "00000", "00000"];
 //const input = ["0000", "2010", "0000", "2002"];
 
 
