@@ -65,7 +65,6 @@ function BinarySearchTreeLCA(strArr) {
             else return right;
         }
     }
-
     const nodes = convertToArray(strArr[0]);
     const node1 = strArr[1];
     const node2 = strArr[2];
