@@ -27,7 +27,6 @@ function OffBinary(strArr) {
         if (base2[i] !== binary[i]) changes ++;
     }
     return changes;
-
 }
 
 // sample test inputs
