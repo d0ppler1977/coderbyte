@@ -12,7 +12,6 @@ Output:"00:04"
 */
 
 function MostFreeTime(arr) {
-    const l = arr.length;
     const events = [];
 
     arr.forEach(function(event) {
