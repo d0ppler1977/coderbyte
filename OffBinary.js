@@ -26,10 +26,11 @@ function OffBinary(strArr) {
     for (let i = 0; i < l; i ++) {
         if (base2[i] !== binary[i]) changes ++;
     }
-    //console.log(binary);
     return changes;
 
 }
+
+// sample test inputs
 //const input = ["5624", "0010111111001"];
 const input = ["44", "111111"];
 
