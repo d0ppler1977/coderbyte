@@ -1,11 +1,5 @@
 function ApproachingFibonacci(arr) { 
-    
-    let total = 0;
-    const length = arr.length;
-    for (let i = 0; i < length; i++) {
-        total += parseInt(arr[i]);
-    }
-
+    const total = arr.reduce((sum, num) => sum + num, 0);
     const fibo = [1,2];
     let fiboNum = 0;
     let idx = 2;
