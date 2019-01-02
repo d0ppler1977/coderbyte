@@ -85,9 +85,7 @@ function BinarySearchTreeLCA(strArr) {
 
 // help functions
 function convertToArray(str) {
-    str = str.replace("[", "");
-    str = str.replace("]", "");
-    str = str.replace(" ", "");
+    str = str.replace("[", "").replace("]", "").replace(/ /g, "");
     return str.split(",").map(Number);
 }
 
