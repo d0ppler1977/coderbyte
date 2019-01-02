@@ -52,7 +52,7 @@ function getDistance(pos1, pos2, size) {
         targetY = temp;
     }
     let v2 = 0;
-    while (tempY != targetY) {
+    while (tempY !== targetY) {
         tempY ++;
         if (tempY >= size) tempY = 0;
         v2 ++;
@@ -69,7 +69,7 @@ function getDistance(pos1, pos2, size) {
         targetX = temp;
     }
     let h2 = 0;
-    while (tempX != targetX) {
+    while (tempX !== targetX) {
         tempX ++;
         if (tempX >= size) tempX = 0;
         h2 ++;
