@@ -1,8 +1,8 @@
 function ClosestEnemyII(board) { 
-    const l = board[0].length;
+    const size = board[0].length;
     const myPos = { x : -1, y : -1}
     const enemies = [];
-    for (let i = 0; i < l; i ++) {
+    for (let i = 0; i < size; i ++) {
         let idx = board[i].indexOf("1");
         if (idx > -1) {
             myPos.x = i;
@@ -16,7 +16,7 @@ function ClosestEnemyII(board) {
     }
 
     if (enemies.length > 0) {
-        enemies.forEach(enemy => enemy.distance = getDistance(myPos, enemy, l));
+        enemies.forEach(enemy => enemy.distance = getDistance(myPos, enemy, size));
         return enemies.reduce((min, e) => e.distance <  min ? e.distance : min, enemies[0].distance);    
     } else {
         return 0;
@@ -36,7 +36,6 @@ function getDistance(pos1, pos2, size) {
     while (tempY != targetY) {
         tempY ++;
         if (tempY >= size) tempY = 0;
-        //console.log("Target Y : " + targetY + ", tempY : " + tempY);
         v2 ++;
     }
 
@@ -54,7 +53,6 @@ function getDistance(pos1, pos2, size) {
     while (tempX != targetX) {
         tempX ++;
         if (tempX >= size) tempX = 0;
-        //console.log("Target X : " + targetX + ", tempX : " + tempX);
         h2 ++;
     }
 
@@ -65,7 +63,7 @@ function getDistance(pos1, pos2, size) {
 
 // some test parameters:
 //const input = ["0000", "1000", "0002", "0002"];
-const input = ["10000", "00000", "00000", "00000", "00000"];
+const input = ["10000", "00200", "00000", "00000", "00000"];
 //const input = ["0000", "2010", "0000", "2002"];
 
 
