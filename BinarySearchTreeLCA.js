@@ -75,8 +75,8 @@ function BinarySearchTreeLCA(strArr) {
     }
 
     const root =  BST.getRootNode();
-    const n1 = BST.search(root, node1); // finds the first node i the tree
-    const n2 = BST.search(root, node2); // the second
+    const n1 = BST.search(root, node1); // finds node1 in the tree
+    const n2 = BST.search(root, node2); // ..and node2
     // since we can asume that every given node exists, we simply call the function with no error handling
     const lca = BST.lowestCommonAncestor(root, n1, n2); // and finally the LCA
 
