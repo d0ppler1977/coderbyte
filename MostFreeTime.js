@@ -14,10 +14,11 @@ Output:"00:04"
 function MostFreeTime(arr) {
     const l = arr.length;
     const events = [];
-    for (let i = 0; i < l; i ++) {
-        const event = arr[i].split("-");
+
+    arr.forEach(function(event) {
+        event = event.split("-");
         events.push({ start : get24Time(event[0]), end : get24Time(event[1]) });
-    }
+    });
 
     events.sort(function(a, b) {
         return a.start > b.start;
@@ -62,6 +63,6 @@ function get24Time(s) {
 }
 
 //const input = ["12:15PM-02:00PM","09:00AM-10:00AM","10:30AM-12:00PM"];
-//const input = ["12:15PM-02:00PM","09:00AM-12:11PM","02:02PM-04:00PM"];
-const input = ["10:00AM-12:30PM","02:00PM-02:45PM","09:10AM-09:50AM"];
+const input = ["12:15PM-02:00PM","09:00AM-12:11PM","02:02PM-04:00PM"];
+//const input = ["10:00AM-12:30PM","02:00PM-02:45PM","09:10AM-09:50AM"];
 console.log(MostFreeTime(input));
