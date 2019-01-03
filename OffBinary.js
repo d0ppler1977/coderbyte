@@ -21,16 +21,13 @@ function OffBinary(strArr) {
     const base10 = strArr[0];
     const binary = strArr[1];
     const base2 = Number(base10).toString(2);
-    let changes = 0;
-    const l = base2.length;
-    for (let i = 0; i < l; i ++) {
-        if (base2[i] !== binary[i]) changes ++;
-    }
-    return changes;
+    return base2
+        .split("")
+        .reduce((change, bit, idx) => bit !== binary[idx] ? change + 1 : change, 0);
 }
 
 // sample test inputs
 //const input = ["5624", "0010111111001"];
-const input = ["44", "111111"];
+const input = ["5624", "0010111111001"];
 
 console.log(OffBinary(input));
