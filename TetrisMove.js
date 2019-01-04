@@ -33,11 +33,11 @@ function TetrisMove(strArr) {
     const shapes = {
         I : [[1, 1, 1, 1]],
 
-        J : [[1, 1, 1, 1],
-             [0, 0, 0, 1]],
+        J : [[1, 1, 1],
+             [0, 0, 1]],
 
-        L : [[1, 1, 1, 1],
-             [1, 0, 0, 0]],
+        L : [[1, 1, 1],
+             [1, 0, 0]],
 
         O : [[1, 1], 
              [1, 1]],
@@ -96,39 +96,25 @@ function TetrisMove(strArr) {
     }
 
     function getScore(board, tetroid, x, y) {
-        console.log("tetroid:");
-        console.log(tetroid);
         let rows = 0;
         const height = tetroid.length;
-        const pts = "111111111111";
         for (let i = 0; i < height; i ++) {
-            console.log("At x:" + x + ", offsetX : " + i + ", y : " + y);
-            const boardrow = board[i + x].join("");
-            const piecerow = tetroid[i].join("").replace(/0/g, "");
-            const row = boardrow.substring(0, y) + piecerow + boardrow.substring(y + piecerow.length);
-            console.log("row : " + row + " (boardrow : " + boardrow + ", piecerow : " + piecerow + ")");
-            console.log("---------------------");
-            if (row === pts) rows ++;
+            const boardrow = board[i + x].join("");            
+            let piecerow = tetroid[i].join("");
+            let postOffset = piecerow.length - getZeroesAfterLast1(piecerow);
+            const preOffset = piecerow.indexOf("1");
+            piecerow = piecerow.replace(/0/g, "");
+            const row = boardrow.substring(0, y + preOffset) + "-" + piecerow + "-" + boardrow.substring(y + postOffset);
+            if (row.indexOf("0") < 0) rows ++;
         }
         return rows;
     }
 
-    // for (let i = 0; i < boardheight; i ++) {
-    //     for (let j = 0; j < boardwidth; j ++) {
-    //         console.log("Checking X:" + i + ", Y:" + j);
-    //         tetroids.forEach(function(t) {
-    //             if (isLegal(board, t, i, j)) {
-    //                 const score = getScore(board, t, i, j);
-    //                 if (score > maxScore) maxScore = score;
-    //             }
-    //         });
-    //     }
-    // }
     let maxScore = 0;
-    tetroids.forEach(function(t) {
+     tetroids.forEach(function(t) {
         for (let i = 0; i <= boardheight - t.length; i ++) {
             for (let j = 0; j <= boardwidth - t[0].length; j ++) {
-                console.log("Checking X:" + i + " - " + t.length + " , Y:" + j + " - " + t[0].length);
+                // console.log("Checking X:" + i + " - " + t.length + " , Y:" + j + " - " + t[0].length);
                 if (isLegal(board, t, i, j)) {
                     const score = getScore(board, t, i, j);
                     if (score > maxScore) maxScore = score;
@@ -136,12 +122,14 @@ function TetrisMove(strArr) {
             }
         }
     });
-
-    drawPiece(board);
+    
     return maxScore;
-
 }
 
+// helper
+function getZeroesAfterLast1(str) {
+    return Number(str).toString().replace(/1/g, "").length;
+}
 
 // for debugging purposes
 function drawPiece(piece) {
@@ -153,7 +141,8 @@ function drawPiece(piece) {
     console.log("     012345678901");
 }
 
-
-let input = ["L","3","4","4","5","6","2","0","6","5","3","6","6"];
+// some samples
+const input = ["L","3","4","4","5","6","2","0","6","5","3","6","6"];
 //input = ["I", "2", "4", "3", "4", "5", "2", "0", "2", "2", "3", "3", "3"];
+//input = ["O", "4", "3", "2", "3", "5", "1", "0", "1", "2", "4", "3", "4"];
 console.log(TetrisMove(input));
