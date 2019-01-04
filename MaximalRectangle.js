@@ -1,5 +1,5 @@
 function MaximalRectangle(strArr) { 
-    const board = [[]];
+    const board = [];
     const cols = strArr[0].length;
     const rows = strArr.length;
     
@@ -11,7 +11,7 @@ function MaximalRectangle(strArr) {
             board[i][j] = strArr[i].substr(j, 1);
         }
     }
-    
+    console.log(board);
     // create a class so I can neatly access the different dimensions
     class Shape {
         constructor(width, height) {
