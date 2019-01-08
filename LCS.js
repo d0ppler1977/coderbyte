@@ -30,16 +30,12 @@ function LCS(strArr) {
     const n = str2.length;
     const lcs = [];
 
-    function getMax(num1, num2) {
-        return num1 > num2 ? num1 : num2;
-    }
-
     for (let i = 0; i <= m; i ++) {
         lcs.push([]);
         for (let j = 0; j <= n; j ++) {
             if ((i === 0) || (j === 0)) lcs[i].push(0);
             else if (str1[i - 1] === str2[j - 1]) lcs[i].push(lcs[i - 1][j - 1] + 1);
-            else lcs[i].push(getMax(lcs[i - 1][j], lcs[i][j - 1]));
+            else lcs[i].push(Math.max(lcs[i - 1][j], lcs[i][j - 1]));
         }
     }
     return lcs[m][n];
