@@ -1,6 +1,3 @@
-/*
-1. For the input ["wrdlmaeo", "a,b,c,d,ap,apple,bar,bat,cat,hello,y,yellow,w,wo,world,worr"] your output was incorrect. The correct answer is 6
-*/
 
 function CharacterRemoval(strArr) {
     const str = strArr.shift();
