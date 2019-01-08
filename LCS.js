@@ -45,5 +45,6 @@ function LCS(strArr) {
     return lcs[m][n];
 }
 
+
 const input = ["abcabb","bacb"];
 console.log(LCS(input));
