@@ -27,6 +27,5 @@ function CharacterRemoval(strArr) {
     return letterCount;
 }
 
-//const input = ["worlcde", "apple,bat,cat,goodbye,hello,yellow,why,world"];
-const input = ["wrdlmaeo", "a,b,c,d,ap,apple,bar,bat,cat,hello,y,yellow,w,wo,world,worr,wrdlmaeoq"];
+const input = ["worlcde", "apple,bat,cat,goodbye,hello,yellow,why,world"];
 console.log(CharacterRemoval(input));
