@@ -15,6 +15,7 @@ For this input your program should return 2 because the closest enemy (2) is 2 s
 from the 1 by moving left to wrap to the other side and then moving down once. 
 The array will contain any number of 0's and 2's, but only a single 1. 
 It may not contain any 2's at all as well, where in that case your program should return a 0. 
+
 */
 
 function ClosestEnemyII(board) { 
